@@ -11,4 +11,6 @@
 
 #ifdef BACKEND_OBFU_ENABLED
 #define BACKEND_OBFU asm("backend_obfu")
+#else
+#define BACKEND_OBFU (void)0
 #endif
