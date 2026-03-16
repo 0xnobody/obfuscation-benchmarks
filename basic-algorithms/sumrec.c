@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include "../annotations.h"
+int findsum(int n);
 int POLARIS_ANNOTATE main(int argc, char* argv[]) {
   BACKEND_OBFU;
   if (argc < 2) return 1;

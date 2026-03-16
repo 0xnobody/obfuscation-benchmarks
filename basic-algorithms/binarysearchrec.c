@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include "../annotations.h"
+int binary(int a[],int n,int m,int l,int u);
 int POLARIS_ANNOTATE main(int argc, char* argv[]) {
     BACKEND_OBFU;
 
