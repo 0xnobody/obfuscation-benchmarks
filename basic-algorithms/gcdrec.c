@@ -1,5 +1,7 @@
 #include<stdio.h>
-int main(int argc, char* argv[]){
+#include "../annotations.h"
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+  BACKEND_OBFU;
   if (argc < 3) return 1;
   int n1,n2,gcd;
 //  printf("\nEnter two numbers: ");
@@ -11,7 +13,8 @@ int main(int argc, char* argv[]){
   return 0;
 }
 
-int findgcd(int x,int y){
+int POLARIS_ANNOTATE findgcd(int x,int y) {
+     BACKEND_OBFU;
      while(x!=y){
           if(x>y)
               return findgcd(x-y,y);

@@ -1,6 +1,8 @@
 #include<stdio.h>
+#include "../annotations.h"
 int fact(int);
-int main(int argc, char* argv[]){
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+  BACKEND_OBFU;
   if(argc < 2) return 1;
   int num,f;
 //  printf("\nEnter a number: ");
@@ -11,7 +13,8 @@ int main(int argc, char* argv[]){
   return 0;
 }
 
-int fact(int n){
+int POLARIS_ANNOTATE fact(int n) {
+   BACKEND_OBFU;
    if(n==1)
        return 1;
    else

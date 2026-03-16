@@ -1,10 +1,12 @@
 #include<stdio.h>
+#include "../annotations.h"
 #define MAX 50
 
 void mergeSort(int arr[],int low,int mid,int high);
 void partition(int arr[],int low,int high);
 
-int main(int argc, char* argv[]){
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+    BACKEND_OBFU;
     if (argc < 11) return 1;
     int merge[10],i;
 
@@ -28,7 +30,8 @@ int main(int argc, char* argv[]){
    return 0;
 }
 
-void partition(int arr[],int low,int high){
+void POLARIS_ANNOTATE partition(int arr[],int low,int high) {
+    BACKEND_OBFU;
 
     int mid;
 
@@ -40,7 +43,8 @@ void partition(int arr[],int low,int high){
     }
 }
 
-void mergeSort(int arr[],int low,int mid,int high){
+void POLARIS_ANNOTATE mergeSort(int arr[],int low,int mid,int high) {
+    BACKEND_OBFU;
 
     int i,m,k,l,temp[MAX];
 

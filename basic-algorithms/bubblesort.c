@@ -1,5 +1,7 @@
 #include<stdio.h>
-int main(int argc, char* argv[]){
+#include "../annotations.h"
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+  BACKEND_OBFU;
 
   int temp,i,j,a[10];//={36,15,79,48,46,36,37,18,28,27};
 

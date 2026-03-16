@@ -1,6 +1,8 @@
 #include<stdio.h>
+#include "../annotations.h"
 
-int main(int argc, char* argv[]){
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+    BACKEND_OBFU;
     if (argc < 2) return 1;
     int num,r,reverse=0;
 

@@ -1,5 +1,7 @@
 #include<stdio.h>
-int main(int argc, char* argv[]){
+#include "../annotations.h"
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+    BACKEND_OBFU;
     if (argc < 2 ) return 1;
     long int decimalNumber,remainder,quotient;
     int i=1,j,temp;

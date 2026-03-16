@@ -1,5 +1,7 @@
 #include<stdio.h>
-int main(int argc, char* argv[]){
+#include "../annotations.h"
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+  BACKEND_OBFU;
   if (argc < 2) return 1;
   int num,x;
 //  printf("\nEnter a number: ");
@@ -11,7 +13,8 @@ int main(int argc, char* argv[]){
 }
 
 int r,s;
-int findsum(int n){
+int POLARIS_ANNOTATE findsum(int n) {
+BACKEND_OBFU;
 if(n){
          r=n%10;
          s=s+r;

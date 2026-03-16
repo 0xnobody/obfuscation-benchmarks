@@ -1,5 +1,7 @@
 #include<stdio.h>
-int main(int argc, char* argv[]){
+#include "../annotations.h"
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+  BACKEND_OBFU;
 
   if (argc < 11) return 1;
   int i,j,s=10,temp,a[10];//={79,2,38,62,15,73,100,31,39,7};

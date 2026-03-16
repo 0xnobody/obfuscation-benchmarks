@@ -3,9 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "../annotations.h"
 
-int main(int argc, char* argv[])
+int POLARIS_ANNOTATE main(int argc, char* argv[])
 {
+    BACKEND_OBFU;
     if (argc < 2) return 1;
     int n, count;
     unsigned long long int factorial=1;         

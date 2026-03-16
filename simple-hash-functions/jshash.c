@@ -1,9 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "../annotations.h"
 
-unsigned int JSHash(char* str, unsigned int len)
+unsigned int POLARIS_ANNOTATE JSHash(char* str, unsigned int len)
 {
+   BACKEND_OBFU;
    unsigned int hash = 1315423911;
    unsigned int i    = 0;
 
@@ -16,7 +18,8 @@ unsigned int JSHash(char* str, unsigned int len)
 }
 /* End Of JS Hash Function */
 
-int main(int argc, char* argv[]) {
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+  BACKEND_OBFU;
   unsigned char *str = argv[1];
   
   unsigned int hash = JSHash(str, strlen(str));

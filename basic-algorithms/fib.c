@@ -1,8 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include <time.h>
+#include "../annotations.h"
 
-int fib(int n) {
+int POLARIS_ANNOTATE fib(int n) {
+   BACKEND_OBFU;
    int a = 1;
    int b = 1;
    int i;
@@ -14,7 +16,8 @@ int fib(int n) {
    return b;
 }
 
-int main(int argc, char* argv[]) {
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+    BACKEND_OBFU;
     if (argc < 2) return 1;
 //  if (argc != 2) {
 //     printf("Give one argument!\n");

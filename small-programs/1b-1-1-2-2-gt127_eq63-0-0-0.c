@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "../annotations.h"
 
-int main(int argc, char* argv[]) {
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+	BACKEND_OBFU;
 	unsigned char c = argv[1][0];
 	
 	if (c > 127)

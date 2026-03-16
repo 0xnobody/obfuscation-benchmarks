@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "../annotations.h"
  
 int check_anagram(char [], char []);
 char *rand_string(char *, size_t);
-int main(int argc, char* argv[])
+int POLARIS_ANNOTATE main(int argc, char* argv[])
 {
+   BACKEND_OBFU;
    // Check the number of passed arguments
    if(argc < 3) return 1; 
    //int length = 25;
@@ -33,8 +35,9 @@ int main(int argc, char* argv[])
    return 0;
 }
  
-int check_anagram(char a[], char b[])
+int POLARIS_ANNOTATE check_anagram(char a[], char b[])
 {
+   BACKEND_OBFU;
    int first[26] = {0}, second[26] = {0}, c = 0;
  
    while (a[c] != '\0')
@@ -60,8 +63,9 @@ int check_anagram(char a[], char b[])
    return 1;
 }
 
-char *rand_string(char *str, size_t size)
+char* POLARIS_ANNOTATE rand_string(char *str, size_t size)
 {
+    BACKEND_OBFU;
     const char charset[] = "abcdefghijklmnopqrstuvwxyz1234567890";
     if (size) {
         --size;

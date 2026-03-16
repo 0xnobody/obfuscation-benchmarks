@@ -1,7 +1,9 @@
 #include<stdio.h>
+#include "../annotations.h"
 
 int stringCompare(char[],char[]);
-int main(int argc, char* argv[]){
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+    BACKEND_OBFU;
     if (argc < 2) return 1; 
     int compare, i;
 
@@ -23,7 +25,8 @@ int main(int argc, char* argv[]){
     return 0;
 }
 
-int stringCompare(char str1[],char str2[]){
+int POLARIS_ANNOTATE stringCompare(char str1[],char str2[]) {
+    BACKEND_OBFU;
     int i=0,flag=0;
    
     while(str1[i]!='\0' && str2[i]!='\0'){

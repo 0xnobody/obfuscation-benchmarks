@@ -1,8 +1,10 @@
 #include<stdio.h>
+#include "../annotations.h"
 
 int binaryAddition(int,int);
 
-int main(int argc, char* argv[]){
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+    BACKEND_OBFU;
 
     if (argc < 3 ) return 1;
     long int binary1,binary2,multiply=0;
@@ -34,7 +36,8 @@ int main(int argc, char* argv[]){
    return 0;
 }
 
-int binaryAddition(int binary1,int binary2){
+int POLARIS_ANNOTATE binaryAddition(int binary1,int binary2) {
+    BACKEND_OBFU;
 
     int i=0,remainder = 0,sum[20];
     int binarySum=0;

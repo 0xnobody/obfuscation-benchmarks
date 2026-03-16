@@ -1,8 +1,10 @@
 #include<stdio.h>
+#include "../annotations.h"
 
 void quicksort(int [10],int,int);
 
-int main(int argc, char* argv[]){
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+  BACKEND_OBFU;
   if (argc < 11) return 1;
   int x[10],i;
 
@@ -24,7 +26,8 @@ int main(int argc, char* argv[]){
   return 0;
 }
 
-void quicksort(int x[10],int first,int last){
+void POLARIS_ANNOTATE quicksort(int x[10],int first,int last) {
+    BACKEND_OBFU;
     int pivot,j,temp,i;
 
      if(first<last){

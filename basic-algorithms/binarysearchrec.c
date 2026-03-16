@@ -1,5 +1,7 @@
 #include<stdio.h>
-int main(int argc, char* argv[]){
+#include "../annotations.h"
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+    BACKEND_OBFU;
 
     if (argc < 12) return 1;
     int a[10],i,m,c,l,u;
@@ -29,7 +31,8 @@ int main(int argc, char* argv[]){
     return 0;
  }
 
-int binary(int a[],int n,int m,int l,int u){
+int POLARIS_ANNOTATE binary(int a[],int n,int m,int l,int u) {
+     BACKEND_OBFU;
 
      int mid,c=0;
 

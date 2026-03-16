@@ -1,9 +1,11 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "../annotations.h"
 
 char *rand_string(char*, size_t);
-int main(int argc, char* argv[]){
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+    BACKEND_OBFU;
     if (argc<2) return 1;
     char* line=argv[1];//[50]="grsxvbqwwirgygiikmmixflwibcasyewaqaqbxpkhycsrmwcfm";
     int i,v,c,ch,d,s,o;
@@ -31,8 +33,9 @@ int main(int argc, char* argv[]){
     return 0;
 }
 
-char *rand_string(char *str, size_t size)
+char* POLARIS_ANNOTATE rand_string(char *str, size_t size)
 {
+    BACKEND_OBFU;
     const char charset[] = "abcdefghijklmnopqrstuvwxyz1234567890";
     if (size) {
         --size;

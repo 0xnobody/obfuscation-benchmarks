@@ -1,9 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "../annotations.h"
 
-unsigned int PJWHash(char* str, unsigned int len)
+unsigned int POLARIS_ANNOTATE PJWHash(char* str, unsigned int len)
 {
+   BACKEND_OBFU;
    const unsigned int BitsInUnsignedInt = (unsigned int)(sizeof(unsigned int) * 8);
    const unsigned int ThreeQuarters     = (unsigned int)((BitsInUnsignedInt  * 3) / 4);
    const unsigned int OneEighth         = (unsigned int)(BitsInUnsignedInt / 8);
@@ -26,7 +28,8 @@ unsigned int PJWHash(char* str, unsigned int len)
 }
 /* End Of  P. J. Weinberger Hash Function */
 
-int main(int argc, char* argv[]) {
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+  BACKEND_OBFU;
   unsigned char *str = argv[1];
   
   unsigned int hash = PJWHash(str, strlen(str));

@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "../annotations.h"
 
-int main(int argc, char* argv[])
+int POLARIS_ANNOTATE main(int argc, char* argv[])
 {
+    BACKEND_OBFU;
     if (argc < 3) return 1;
     int num1, num2, i, hcf;
     //printf("Enter two integers: ");

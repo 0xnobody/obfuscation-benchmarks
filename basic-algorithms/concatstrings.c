@@ -1,7 +1,9 @@
 #include<stdio.h>
+#include "../annotations.h"
 
 void stringConcat(char[],char[]);
-int main(int argc, char* argv[]){
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+    BACKEND_OBFU;
     if (argc < 2) return 1;
     int compare;
 
@@ -20,7 +22,8 @@ int main(int argc, char* argv[]){
     return 0;
 }
 
-void stringConcat(char str1[],char str2[]){
+void POLARIS_ANNOTATE stringConcat(char str1[],char str2[]) {
+    BACKEND_OBFU;
     int i=0,j=0;
    
    

@@ -1,9 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "../annotations.h"
 
-unsigned int BKDRHash(char* str, unsigned int len)
+unsigned int POLARIS_ANNOTATE BKDRHash(char* str, unsigned int len)
 {
+   BACKEND_OBFU;
    unsigned int seed = 131; /* 31 131 1313 13131 131313 etc.. */
    unsigned int hash = 0;
    unsigned int i    = 0;
@@ -17,7 +19,8 @@ unsigned int BKDRHash(char* str, unsigned int len)
 }
 /* End Of BKDR Hash Function */
 
-int main(int argc, char* argv[]) {
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+  BACKEND_OBFU;
   unsigned char *str = argv[1];
   
   unsigned int hash = BKDRHash(str, strlen(str));

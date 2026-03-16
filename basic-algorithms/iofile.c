@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>  /* For exit() function */
 #include <time.h>
+#include "../annotations.h"
 
 char *rand_string(char*, size_t);
 
-int main(int argc, char* argv[])
+int POLARIS_ANNOTATE main(int argc, char* argv[])
 {
+   BACKEND_OBFU;
    if (argc < 2) return 1;
    char* c=argv[1];//[25]="glrpvpkxdvhisgkmudwyknbai";
    FILE *rfile, *wfile;
@@ -36,8 +38,9 @@ int main(int argc, char* argv[])
    return 0;
 }
 
-char *rand_string(char *str, size_t size)
+char* POLARIS_ANNOTATE rand_string(char *str, size_t size)
 {
+    BACKEND_OBFU;
     const char charset[] = "abcdefghijklmnopqrstuvwxyz1234567890";
     if (size) {
         --size;

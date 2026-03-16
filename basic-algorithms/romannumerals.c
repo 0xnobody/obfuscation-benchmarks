@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include "../annotations.h"
 
 void predigits(char c1,char c2);
 void postdigits(char c,int n);
@@ -6,7 +7,8 @@ void postdigits(char c,int n);
 char roman_Number[1000];
 int i=0;
 
-int main(int argc, char* argv[]){
+int POLARIS_ANNOTATE main(int argc, char* argv[]) {
+    BACKEND_OBFU;
     if(argc < 2) return 1;
     int j;
     long int number;
@@ -96,12 +98,14 @@ int main(int argc, char* argv[]){
 
 }
 
-void predigits(char c1,char c2){
+void POLARIS_ANNOTATE predigits(char c1,char c2) {
+    BACKEND_OBFU;
     roman_Number[i++] = c1;
     roman_Number[i++] = c2;
 }
 
-void postdigits(char c,int n){
+void POLARIS_ANNOTATE postdigits(char c,int n) {
+    BACKEND_OBFU;
     int j;
     for(j=0;j<n;j++)
          roman_Number[i++] = c;
