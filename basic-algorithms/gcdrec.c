@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include "../annotations.h"
+int findgcd(int x,int y);
 int POLARIS_ANNOTATE main(int argc, char* argv[]) {
   BACKEND_OBFU;
   if (argc < 3) return 1;
